@@ -1,0 +1,72 @@
+:root {
+  --main-bg-color: #eff5fe;
+}
+body,
+html {
+  font-family: syste-ui;
+  background: var(--main-bg-color);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drop-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  min-height: 200px;
+  border: 2px dashed rgb(195, 227, 240);
+  margin: 30px 30px;
+  border-radius: 10px;
+  background: white;
+}
+.icon-container {
+  width: 75px;
+  height: 80px;
+}
+.upload-container {
+  background: white;
+  box-shadow: 0px 20px 20px #0000002e;
+  border-radius: 25px;
+}
+.dragged.drop-zone {
+  background: rgb(165, 222, 245);
+  border-color: rgb(148, 241, 210);
+}
+.icon-container img {
+  width: 60px;
+  position: absolute;
+  transition: transform 250ms ease-in-out;
+}
+.center {
+  z-index: 3;
+}
+.right {
+  z-index: 1;
+}
+.left {
+  z-index: 2;
+}
+.dragged .icon-container .center {
+  transform: translateX(-26px);
+  filter: hue-rotate(40deg);
+  z-index: 3;
+}
+.dragged .icon-container .right {
+  z-index: 1;
+  transform: translateX(26px);
+  filter: hue-rotate(90deg);
+}
+#fileinput {
+  display: none;
+}
+.browseBtn {
+  color: rgb(62, 189, 240);
+  cursor: pointer;
+}
